@@ -24,14 +24,14 @@ STEP 5 :
 Repeat steps 3 and 4: Iterate steps 3 and 4 until convergence. Convergence occurs when the assignments of data points to clusters no longer change or change very minimally. 
 
 ## Program:
+
+
+### Developed by: Harevasu S
+### RegisterNumber: 212223230069
+
+
 ```
 Program to implement the K Means Clustering for Customer Segmentation.
-Developed by: Harevasu S
-RegisterNumber: 212223230069
-
-```
-```
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
