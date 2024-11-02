@@ -36,32 +36,23 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 data=pd.read_csv("Mall_Customers (1).csv")
-
 data.head()
-
 data.info()
-
 data.isnull().sum()
-
 from sklearn.cluster import KMeans
 wcss=[]
-
 for i in range (1,11):
     kmeans=KMeans(n_clusters = i,init="k-means++")
     kmeans.fit(data.iloc[:,3:])
     wcss.append(kmeans.inertia_)
-
 plt.plot(range(1,11),wcss)
 plt.xlabel("No. of clusters")
 plt.ylabel("wcss")
 plt.title("Elbow matter")
-
 km=KMeans(n_clusters=5)
 km.fit(data.iloc[:,3:])
-
 y_pred=km.predict(data.iloc[:,3:])
 y_pred
-
 data["cluster"]=y_pred
 df0=data[data["cluster"]==0]
 df1=data[data["cluster"]==1]
@@ -81,17 +72,17 @@ plt.title("Customer Segmets")
 
 ELBOW GRAPH:
 
-![image](https://github.com/user-attachments/assets/4d15b09d-b20e-46ce-868c-38e010c31f62)
+![image](https://github.com/user-attachments/assets/b985acd5-588b-435b-aca6-2c6721ceb7ff)
 
 
 PREDICTED VALUES:
 
-![image](https://github.com/user-attachments/assets/96542619-edc4-4aba-9ec2-9d598fc2a226)
+![image](https://github.com/user-attachments/assets/baa9c787-3632-4ab2-99aa-7dac3c53dba2)
 
 
 FINAL GRAPH:
 
-![image](https://github.com/user-attachments/assets/f3c91988-f962-4199-a9ac-322633d0f806)
+![image](https://github.com/user-attachments/assets/8b594557-cacd-4b42-a5ae-f83c9df4792c)
 
 
 
